@@ -1,8 +1,8 @@
 import e from "express";
-import { signinService, signupService } from "../contoller/user.js";
+import { signinService, signupService } from "../controller/user.js";
 const Router = e.Router();
 
-Router.post('/user/signup',signupService);
-Router.post('/user/signin',signinService);
+Router.post('/signup',signupService);
+Router.post('/signin',signinService);
 
 export default Router;
