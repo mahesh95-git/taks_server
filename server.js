@@ -1,6 +1,6 @@
 import e from "express";
 import { config } from "dotenv";
-import userRouter from "./routes/route.js";
+import userRouter from "./routes/user.js";
 import projectRouter from "./routes/project.js";
 import taksRouter from "./routes/task.js";
 import cookieParser from "cookie-parser";

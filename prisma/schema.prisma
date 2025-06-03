@@ -14,11 +14,17 @@ model User{
   name String @db.VarChar(100)
   email String @unique 
   password String 
+  role Role @default(EMPLOYEE) 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   projects Project[]
 }
 
+enum Role {
+  PROJECT_MANAGER
+  EMPLOYEE
+  ADMIN
+}
 
 model Project{
   id String @id @default(cuid())

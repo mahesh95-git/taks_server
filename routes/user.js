@@ -1,5 +1,5 @@
 import e from "express";
-import { signinService, signupService } from "../controller/user.js";
+import { signupService ,signinService} from "../controller/user.js";
 const Router = e.Router();
 
 Router.post('/signup',signupService);
