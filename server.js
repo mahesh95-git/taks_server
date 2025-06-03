@@ -4,15 +4,19 @@ import userRouter from "./routes/user.js";
 import projectRouter from "./routes/project.js";
 import taksRouter from "./routes/task.js";
 import cookieParser from "cookie-parser";
+import helmet from "helmet";
+
 config();
 const app = e();
 app.use(e.json());
+app.use(helmet()); // Security middleware to set various HTTP headers
 app.use(e.urlencoded({ extended: true }));
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/task", taksRouter);
 app.use("/api/v1/project", projectRouter);
 app.use(cookieParser());
 // Error handling middleware
+
 app.use((err, req, res, next) => {
     console.error("Error in middleware:", err);
     res.status(500).json({
@@ -20,7 +24,6 @@ app.use((err, req, res, next) => {
         message: err.message || "Internal Server Error"
     });
 });
-
 
 const PORT = process.env.PORT || 3000
 
